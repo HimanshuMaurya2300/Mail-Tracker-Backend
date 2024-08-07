@@ -14,7 +14,7 @@ const transport = createTransport({
 
 export const sendMail = async (emails: string[], trackingId: string) => {
 
-    const trackingURL = `${process.env.BASE_URL}/track-mail/${trackingId}`
+    const trackingURL = `${process.env.BASE_URL}/track/track-mail/${trackingId}`
 
     const mailOptions = {
         from: process.env.MAIL_USER,
@@ -25,7 +25,6 @@ export const sendMail = async (emails: string[], trackingId: string) => {
             <img 
                 src="${trackingURL}" 
                 alt="dead pixel"
-                style="display:none;"
             />
         `
     }

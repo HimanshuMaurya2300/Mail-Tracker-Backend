@@ -9,7 +9,7 @@ let imageBuffer: Buffer;
 (
     async () => {
         try {
-            imageBuffer = await fs.readFile(__dirname + '/../assets/img.webp')
+            imageBuffer = await fs.readFile(__dirname + '/assets/img.jpeg')
         } catch (error) {
             console.log(error)
         }
@@ -50,7 +50,7 @@ app.get("/track-mail/:id", async (c) => {
 
         return new Response(imageBuffer, {
             headers: {
-                'Content-Type': 'image/webp',
+                'Content-Type': 'image/jpeg',
                 'Content-Length': imageBuffer.length.toString()
             }
         })
